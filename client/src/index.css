@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 120 100% 75%;
+    --card: 120 10% 5%;
+    --border: 120 30% 12%;
+    --muted: 120 8% 10%;
+    --primary: 120 100% 50%;
+    --success: 120 100% 50%;
+    --warning: 60 100% 50%;
+    --destructive: 0 100% 50%;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Share Tech Mono', monospace;
+    background-image:
+      radial-gradient(ellipse at 20% 50%, hsl(120 100% 5% / 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, hsl(180 100% 5% / 0.2) 0%, transparent 40%);
+  }
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, hsl(0 0% 0% / 0.04) 2px, hsl(0 0% 0% / 0.04) 4px);
+  pointer-events: none;
+  z-index: 9999;
+}
+.neon-green { color: hsl(120 100% 60%); text-shadow: 0 0 10px hsl(120 100% 50% / .8), 0 0 30px hsl(120 100% 50% / .25); }
+.neon-cyan { color: hsl(180 100% 60%); text-shadow: 0 0 10px hsl(180 100% 50% / .8); }
+.glow { box-shadow: 0 0 10px hsl(120 100% 50% / .25), inset 0 0 10px hsl(120 100% 50% / .05); }
+.terminal-bg { background: hsl(120 10% 3%); border: 1px solid hsl(120 30% 15%); }
